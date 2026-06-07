@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Radical Portfolio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/matifandy8/NeoBrutalismCSS@main/dist/neo-brutalism.min.css">
+  <style>
+    body {
+      background-color: #f0f0f0;
+      padding: 2rem;
+    }
+    .neo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .active-filter {
+      background-color: #000 !important;
+      color: #fff !important;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="neo-container neo-black-shadow" style="background-color: #ffcc00; padding: 2rem; margin-bottom: 2rem;">
+    <h1 style="font-size: 3rem; margin: 0; text-transform: uppercase; letter-spacing: -1px;">Creative Feed //</h1>
+    <p style="font-weight: bold; margin-top: 0.5rem;">A static archive of curated subculture, art, and music.</p>
+  </header>
+
+  <nav style="display: flex; gap: 1rem; flex-wrap: wrap;">
+    <button class="neo-btn neo-black-shadow" data-category="all" style="background-color: #fff;">[ SHOW ALL ]</button>
+    <button class="neo-btn neo-black-shadow" data-category="Visual Art" style="background-color: #00ffaa;">Visual Art</button>
+    <button class="neo-btn neo-black-shadow" data-category="Subculture" style="background-color: #ff0055; color: white;">Subculture</button>
+    <button class="neo-btn neo-black-shadow" data-category="Music" style="background-color: #0066ff; color: white;">Music</button>
+  </nav>
+
+  <main id="articles-grid" class="neo-grid"></main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

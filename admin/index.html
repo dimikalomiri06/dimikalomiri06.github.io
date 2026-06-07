@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Admin Panel</title>
+  <script src="https://unpkg.com/sveltia-cms@latest/dist/sveltia-cms.js" type="module"></script>
+
+  <meta name="cms-config-url" content="#cms-config">
+  <script type="text/yaml" id="cms-config">
+    backend:
+      name: github
+      repo: dimikalomiri06/dimikalomiri06
+      branch: main
+      # Setting open_authorizer to false/omitting base_url prompts for a direct GitHub PAT
+      open_authorizer: false 
+
+    media_folder: "assets/images"
+    public_folder: "/assets/images"
+
+    collections:
+      - name: "articles"
+        label: "Articles"
+        folder: "content/articles"
+        create: true
+        slug: "{{slug}}"
+        extension: "json"
+        format: "json"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Date", name: "date", widget: "datetime" }
+          - { label: "Category", name: "category", widget: "select", options: ["Visual Art", "Subculture", "Music"] }
+          - { label: "Author Name", name: "author", widget: "string" }
+          - { label: "Cover Image", name: "image", widget: "image", required: false }
+          - { label: "Card Color", name: "color", widget: "select", options: ["#ff0055", "#00ffaa", "#ffcc00", "#0066ff"] }
+          - { label: "Body Content", name: "body", widget: "markdown" }
+  </script>
+</head>
+<body>
+</body>
+</html>
